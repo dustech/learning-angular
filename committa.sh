@@ -2,7 +2,7 @@
 
 if [ -z "$1" ]
   then
-    msg="Aggiornamento al `DATE`"
+    msg="Aggiornamento al `date`"
   else
     msg="$1"
 fi
