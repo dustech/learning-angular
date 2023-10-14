@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'questa e\' una interpolazione di stringa';
+  title = 'Insieme, eleviamo la tecnologia per renderla piu vicina e rilevante, ogni giorno.';
 }

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
+
+
   private _allowNewServer: boolean = false;
 
   public get allowNewServer(): boolean {
@@ -25,6 +27,13 @@ export class ServersComponent implements OnInit {
     this._serverCreationStatus = value;
   }
 
+  private _newServerName: String;
+  public get newServerName(): String {
+    return this._newServerName;
+  }
+  public set newServerName(value: String) {
+    this._newServerName = value;
+  }
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -32,13 +41,16 @@ export class ServersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    console.info('ngOnInit run');
   }
 
   onCreateServer() {
-    this.serverCreationStatus = 'Server was created!';
-
+    this.serverCreationStatus = 'Server was created! ' + this.newServerName;
   }
 
+  onUpdateServerName(event: Event) {
+    console.log(event);
+    this.newServerName = (<HTMLInputElement>event.target).value;
+  }
 
 }

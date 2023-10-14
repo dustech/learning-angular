@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="username">
+<p>{{username}}</p>
+
+<button class="btn btn-success" [disabled]="!isResetEnabled" (click)="onReset($event)">Clear</button>
