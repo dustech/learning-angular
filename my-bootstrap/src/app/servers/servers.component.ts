@@ -7,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  private allowNewServer: boolean = false;
+  private _allowNewServer: boolean = false;
+
+  public get allowNewServer(): boolean {
+    return this._allowNewServer;
+  }
+  public set allowNewServer(value: boolean) {
+    this._allowNewServer = value;
+  }
+
+  private _serverCreationStatus = 'No server was created!';
+
+  public get serverCreationStatus() {
+    return this._serverCreationStatus;
+  }
+  public set serverCreationStatus(value) {
+    this._serverCreationStatus = value;
+  }
 
   constructor() {
     setTimeout(() => {
@@ -19,8 +35,10 @@ export class ServersComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
-  getAllowNewServer(): boolean {
-    return this.allowNewServer;
+  onCreateServer() {
+    this.serverCreationStatus = 'Server was created!';
+
   }
+
 
 }
